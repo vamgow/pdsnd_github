@@ -234,7 +234,7 @@ def main():
         station_stats(df)
         trip_duration_stats(df)
         user_stats(df)
-
+#Giving the user the flexibility to see additional data if required
         count = 5
         while True:
             additional_data = input("Would you like to see the individual trip data:").lower()
