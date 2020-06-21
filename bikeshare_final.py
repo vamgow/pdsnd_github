@@ -37,8 +37,8 @@ def get_filters():
     """
   print("Hello! Let\'s explore some US bikeshare data!")
 
-    
-  
+
+
 
   while True:
     city = input("Which city would you like to see the data for?").lower()
@@ -48,9 +48,9 @@ def get_filters():
       print("Invalid Input")
 
 
-  
 
-  
+
+
   month = 'all'
   day = 'all'
   while True:
@@ -79,12 +79,12 @@ def get_filters():
 
     elif time_frame == 'none':
       break
-    
+
     else:
       print("Invalid input. Please enter day, month or none")
-    
-    
-    
+
+
+
 
   print('-'*40)
   return city, month, day
@@ -93,7 +93,7 @@ def get_filters():
 def load_data(city, month, day):
 
 
- 
+
 
    # load data file into a dataframe
   df = pd.read_csv(CITY_DATA[city])
@@ -116,9 +116,9 @@ def load_data(city, month, day):
 
   # filter by day of week if applicable
   if day != 'all':
-    
-    
-    
+
+
+
 
     # filter by day of week to create the new dataframe
     days = [1,2,3,4,5,6,7]
@@ -139,7 +139,7 @@ def station_stats(df):
     common_end = df['End Station'].mode()[0]
 
     # display most frequent combination of start station and end station trip
-    
+
     df['Start End'] = df['Start Station'] + ' to '+df['End Station']
     frequent_route = df['Start End'].mode()[0]
 
@@ -159,7 +159,7 @@ def time_stats(df):
     # display the most common month
     df['month'] = df['Start Time'].dt.month_name()
     common_month = df['month'].mode()[0]
-    
+
 
     # display the most common day of week
     df['week'] = df['Start Time'].dt.day_name()
@@ -192,7 +192,7 @@ def trip_duration_stats(df):
     mean_duration = df['Trip Duration'].mean()
 
     print("The total travel time is {} minutes".format(total_duration))
-    print("The mean travel time is:",mean_duration)
+    print("The mean travel time is:{}".format(mean_duration))
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
@@ -234,13 +234,13 @@ def main():
         station_stats(df)
         trip_duration_stats(df)
         user_stats(df)
-        
+#Giving the user the flexibility to see additional data if required
         count = 5
         while True:
             additional_data = input("Would you like to see the individual trip data:").lower()
             if additional_data != 'yes':
                 break
-           
+
             elif additional_data == 'yes':
                 individual_data = df.iloc[:count]
                 print(individual_data)
@@ -250,25 +250,25 @@ def main():
                         count += 5
                         individual_data = df.iloc[:count]
                         print(individual_data)
-                    
+
                     elif more_data == 'no':
                         break
-                      
+
                     else:
                         print("Please check your typo:")
-                break        
+                break
 
-              
+
             else:
                 print("Please rectify your response.")
-            
-            
-          
-        
-            
-            
-          
-          
+
+
+
+
+
+
+
+
 
         restart = input('\nWould you like to restart? Enter yes or no.\n')
         if restart.lower() != 'yes':
@@ -277,122 +277,3 @@ def main():
 
 if __name__ == "__main__":
 	main()
-
-
-
-
-
-        
-
-          
-        
-        
-
-     
-
-      
-
-    
-
-        
-
-        
-        
-        
-      
-
-      
-
-    
-
-  
-
-          
-  
-
-      
-        
-
-  
-
-
-
-
-
-
-
-
-
-
-    
-
-
-      
-
-
-     
-        
-
-    
-
-        
-
-    
-
-     
-
-        
-           
-
-        
-        
-         
-
-      
-
-           
-
-    
-    
-    
-
-    
-
-
-    		
-
-
-
-
-
-
-      
-	    
-
-
-    		
-
-            			
-
-	    
-         
-    
-         
-      
-
-
-      
-
-
-    
-
-
-
-    
-
-    
-
-
-    
-
-
