@@ -2,7 +2,7 @@
 June 20,2020.
 
 ### Project Title
-**Bikeshare data**
+**Exploring Bikeshare data**
 
 ### Description
 *The project gives solutions for the bike share data of three cities namely chicago, washington and new york in terms of the key statistics pertaining to the trip data*
